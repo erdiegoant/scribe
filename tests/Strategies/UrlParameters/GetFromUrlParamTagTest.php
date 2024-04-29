@@ -97,27 +97,27 @@ class GetFromUrlParamTagTest extends TestCase
                 'example' => null
             ],
             'nameTyped' => [
-                'type' => 'name',
+                'type' => 'string',
                 'required' => false,
                 'description' => '',
             ],
             'addressTyped' => [
-                'type' => 'address',
+                'type' => 'string',
                 'required' => false,
                 'description' => '',
             ],
             'cityTyped' => [
-                'type' => 'city',
+                'type' => 'string',
                 'required' => false,
                 'description' => '',
             ],
             'postcodeTyped' => [
-                'type' => 'postcode',
+                'type' => 'string',
                 'required' => false,
                 'description' => '',
             ],
             'phoneTyped' => [
-                'type' => 'phone',
+                'type' => 'string',
                 'required' => false,
                 'description' => '',
             ],
