@@ -35,7 +35,6 @@ class GetFromUrlParamTagTest extends TestCase
             new Tag('urlParam', 'phoneTyped phone'),
         ];
         $results = $strategy->getFromTags($tags);
-        ray($results);
 
         $this->assertArraySubset([
             'id' => [
