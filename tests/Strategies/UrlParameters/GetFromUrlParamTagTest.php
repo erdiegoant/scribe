@@ -28,8 +28,14 @@ class GetFromUrlParamTagTest extends TestCase
             new Tag('urlParam', 'withExampleOnlyButTyped int Example: 12'),
             new Tag('urlParam', 'noExampleNoDescription No-example.'),
             new Tag('urlParam', 'noExample Something No-example'),
+            new Tag('urlParam', 'nameTyped name'),
+            new Tag('urlParam', 'addressTyped address'),
+            new Tag('urlParam', 'cityTyped city'),
+            new Tag('urlParam', 'postcodeTyped postcode'),
+            new Tag('urlParam', 'phoneTyped phone'),
         ];
         $results = $strategy->getFromTags($tags);
+        ray($results);
 
         $this->assertArraySubset([
             'id' => [
@@ -90,6 +96,31 @@ class GetFromUrlParamTagTest extends TestCase
                 'required' => false,
                 'description' => 'Something',
                 'example' => null
+            ],
+            'nameTyped' => [
+                'type' => 'name',
+                'required' => false,
+                'description' => '',
+            ],
+            'addressTyped' => [
+                'type' => 'address',
+                'required' => false,
+                'description' => '',
+            ],
+            'cityTyped' => [
+                'type' => 'city',
+                'required' => false,
+                'description' => '',
+            ],
+            'postcodeTyped' => [
+                'type' => 'postcode',
+                'required' => false,
+                'description' => '',
+            ],
+            'phoneTyped' => [
+                'type' => 'phone',
+                'required' => false,
+                'description' => '',
             ],
         ], $results);
     }

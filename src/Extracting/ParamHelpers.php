@@ -98,6 +98,11 @@ trait ParamHelpers
             'string' => fn() => $size ? $faker->lexify(str_repeat("?", $size)) : $faker->word(),
             'object' => fn() => [],
             'file' => fn() => UploadedFile::fake()->create('test.jpg')->size($size ?: 10),
+            'name' => fn() => $faker->name(),
+            'address' => fn() => $faker->streetAddress(),
+            'city' => fn() => $faker->city(),
+            'postcode' => fn() => $faker->postcode(),
+            'phone' => fn() => $faker->phoneNumber(),
         ];
 
         return $fakeFactoriesByType[$baseType] ?? $fakeFactoriesByType['string'];
@@ -127,6 +132,11 @@ trait ParamHelpers
             'bool',
             'string',
             'object',
+            'name',
+            'address',
+            'city',
+            'postcode',
+            'phone',
         ];
         return in_array(str_replace('[]', '', $type), $types);
     }
