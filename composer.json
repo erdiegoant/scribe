@@ -1,5 +1,5 @@
 {
-    "name": "knuckleswtf/scribe",
+    "name": "erdiegoant/scribe",
     "license": "MIT",
     "description": "Generate API documentation for humans from your Laravel codebase.✍",
     "keywords": [
@@ -8,10 +8,10 @@
         "laravel",
         "dingo"
     ],
-    "homepage": "http://github.com/knuckleswtf/scribe",
+    "homepage": "http://github.com/erdiegoant/scribe",
     "authors": [
         {
-            "name": "Shalvah"
+            "name": "Diego"
         }
     ],
     "require": {
