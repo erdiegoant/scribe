@@ -218,7 +218,6 @@ trait ParamHelpers
             'array' => (empty($value) || array_keys($value)[0] === 0)
                 ? static::normalizeTypeName(gettype($value[0] ?? '')) . '[]'
                 : 'object',
-            'name', 'address', 'city', 'postcode', 'phone' => 'string',
             default => $typeName
         };
     }
