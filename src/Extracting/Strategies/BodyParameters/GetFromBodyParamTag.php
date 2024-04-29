@@ -2,6 +2,7 @@
 
 namespace Knuckles\Scribe\Extracting\Strategies\BodyParameters;
 
+use Illuminate\Support\Str;
 use Knuckles\Scribe\Extracting\Strategies\GetFieldsFromTagStrategy;
 
 class GetFromBodyParamTag extends GetFieldsFromTagStrategy
@@ -35,6 +36,8 @@ class GetFromBodyParamTag extends GetFieldsFromTagStrategy
         $type = static::normalizeTypeName($type);
         [$description, $example, $enumValues, $exampleWasSpecified] =
             $this->getDescriptionAndExample($description, $type, $tagContent, $name);
+
+        $type = Str::contains($type, ['name', 'address', 'city', 'postcode', 'phone']) ? 'string' : $type;
 
         return compact('name', 'type', 'description', 'required', 'example', 'enumValues', 'exampleWasSpecified');
     }

@@ -66,6 +66,8 @@ class GetFromQueryParamTag extends GetFieldsFromTagStrategy
         [$description, $example, $enumValues, $exampleWasSpecified] =
             $this->getDescriptionAndExample($description, $type, $tagContent, $name);
 
+        $type = Str::contains($type, ['name', 'address', 'city', 'postcode', 'phone']) ? 'string' : $type;
+
         return compact('name', 'description', 'required', 'example', 'type', 'enumValues', 'exampleWasSpecified');
     }
 }
